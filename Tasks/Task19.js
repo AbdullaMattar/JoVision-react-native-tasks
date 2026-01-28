@@ -7,12 +7,12 @@ export default function Task19() {
   return (
     <SafeAreaView style={styles.container}>
       <Button title="Show" onPress={() => setToggle(!toggle)} />
-      {toggle && <Myclass />}
+      {toggle && <MyClassPage />}
     </SafeAreaView>
   );
 }
 
-class Myclass extends Component {
+class MyClassPage extends Component {
   render() {
     return <Text>Hello From The Class Component</Text>;
   }
