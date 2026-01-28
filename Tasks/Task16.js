@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Text, View, ScrollView, TextInput, Button } from 'react-native';
 
 export default function Task16() {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
   return (
     <View>
       {isVisible && <Text>Abdulla Matar</Text>}
