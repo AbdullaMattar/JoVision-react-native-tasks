@@ -10,7 +10,7 @@ export default function Task18() {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       {!isVisible ? (
         <>
           <ActivityIndicator size="large" />
@@ -19,7 +19,7 @@ export default function Task18() {
       ) : (
         <Text>abdulla</Text>
       )}
-    </View>
+    </SafeAreaView>
   );
 }
 
