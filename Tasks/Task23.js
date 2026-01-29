@@ -2,7 +2,7 @@ import React, { useState, useEffect, Component } from 'react';
 import { Text, View, StyleSheet, Button, TextInput } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 
-export default function Task22() {
+export default function Task23() {
   const [Tinput, setTinput] = useState('');
 
   return (
