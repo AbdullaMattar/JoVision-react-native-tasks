@@ -18,9 +18,11 @@ export default function Task26() {
     setIsBlocking(true);
     try {
       const ip = await fetch('https://api.ipify.org?format=json');
+      //Normal const not state => because it's temp values and don't effect rendering rn
       const json = await ip.json();
       setRes(json.ip);
     } finally {
+      //try => need finally or catch
       setIsBlocking(false);
     }
   }
@@ -32,13 +34,13 @@ export default function Task26() {
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.buttoncon}>
         <View style={styles.button}>
           <Button
             title="Non-blocking Request"
             onPress={() => nonBlocking()}
-            disabled={isblocking}
+            disabled={isblocking} //disabled prop => to control the blocking
           />
         </View>
         <View style={styles.button}>
@@ -52,7 +54,7 @@ export default function Task26() {
       <View>
         <Text>{isblocking ? 'Loading... ' : res}</Text>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
