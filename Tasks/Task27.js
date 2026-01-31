@@ -26,19 +26,19 @@ export default function Task27() {
       {
         text: '1',
         onPress: () => {
-          setLoc(require('../Resource/1.png'));
+          setLoc(require('../Resource/Images/(1).jpg'));
         },
       },
       {
         text: '2',
         onPress: () => {
-          setLoc(require('../Resource/2.jpg'));
+          setLoc(require('../Resource/Images/(2).jpg'));
         },
       },
       {
         text: '3',
         onPress: () => {
-          setLoc(require('../Resource/3.jpg'));
+          setLoc(require('../Resource/Images/(3).jpg'));
         },
       },
     ]);
