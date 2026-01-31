@@ -39,14 +39,14 @@ export default function Task26() {
         <View style={styles.button}>
           <Button
             title="Non-blocking Request"
-            onPress={() => nonBlocking()}
+            onPress={nonBlocking}
             disabled={isblocking} //disabled prop => to control the blocking
           />
         </View>
         <View style={styles.button}>
           <Button
             title="blocking Request"
-            onPress={() => blockingcall()}
+            onPress={blockingcall}
             disabled={isblocking}
           />
         </View>
