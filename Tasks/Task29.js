@@ -17,10 +17,14 @@ import {
   Alert,
   FlatList,
   Pressable,
+  Modal,
 } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 
-export default function Task28() {
+export default function Task29() {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [num, setNum] = useState('');
+  const refToFL = useRef(null);
   const images = [
     require('../Resource/Images/(1).jpg'),
     require('../Resource/Images/(2).jpg'),
@@ -35,9 +39,32 @@ export default function Task28() {
     require('../Resource/Images/(11).jpg'),
   ];
 
+  function ScrollToImage() {
+    const requestedIndex = Number(num) - 1;
+    try {
+      if (requestedIndex < 0 || requestedIndex >= images.length) {
+        //just to make sure
+        throw new Error('Index out of range');
+      }
+      setIsModalVisible(false);
+      refToFL.current?.scrollToIndex({
+        index: requestedIndex,
+        animated: true,
+      });
+    } catch (error) {
+      setIsModalVisible(true);
+      Alert.alert(
+        'Error',
+        error.message + '\nRange is between 1 and ' + images.length
+      );
+    }
+  }
+
   return (
     <SafeAreaView style={styles.container}>
+      <Button title="Go to Image" onPress={() => setIsModalVisible(true)} />
       <FlatList
+        ref={refToFL}
         horizontal={true}
         data={images}
         showsHorizontalScrollIndicator={false}
@@ -56,12 +83,30 @@ export default function Task28() {
           </Pressable>
         )}
       />
+      <Modal
+        visible={isModalVisible}
+        presentationStyle="pageSheet"
+        onRequestClose={() => setIsModalVisible(false)}
+        animationType="slide">
+        <View style={styles.container}>
+          <Text>Enter Image Index :</Text>
+          <TextInput
+            style={styles.input}
+            onChangeText={input => setNum(input)}
+            placeholder="Type here"
+            keyboardType="numeric"
+          />
+          <Button title="Go" onPress={ScrollToImage} />
+        </View>
+      </Modal>
     </SafeAreaView>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginTop: 150,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -73,5 +118,11 @@ const styles = StyleSheet.create({
     width: 400,
     margin: 10,
     marginTop: 100,
+  },
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
   },
 });
