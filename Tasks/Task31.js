@@ -21,7 +21,7 @@ import {
 } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 
-export default function Task30() {
+export default function Task31() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [num, setNum] = useState('');
   const refToFL = useRef(null);
@@ -47,6 +47,15 @@ export default function Task30() {
     }))
   );
 
+  const [maxLen, setMaxLen] = useState(images.length);
+
+  function DuplicateImg(item, index) {
+    const tmpList = [...images];
+    const newImg = { id: maxLen, src: item.src };
+    tmpList.splice(index + 1, 0, newImg);
+    setImages(tmpList);
+    setMaxLen(maxLen => maxLen + 1);
+  }
   function CheckIndex(index) {
     if (index < 0 || index >= images.length) {
       return false;
@@ -108,6 +117,14 @@ export default function Task30() {
               onPress={() => IdToDel(item.id, index)}>
               <Text>X</Text>
             </Pressable>
+            <Pressable
+              style={styles.icn}
+              onPress={() => DuplicateImg(item, index)}>
+              <Image
+                style={styles.icnimg}
+                source={require('../Resource/Images/duplicate-icon.png')}
+              />
+            </Pressable>
           </View>
         )}
       />
@@ -162,5 +179,18 @@ const styles = StyleSheet.create({
     marginRight: 20,
     top: 1,
     right: 1,
+  },
+  icn: {
+    position: 'absolute',
+    borderWidth: 1,
+    padding: 10,
+    marginTop: 100,
+    marginLeft: 20,
+    top: 1,
+    left: 1,
+  },
+  icnimg: {
+    height: 25,
+    width: 25,
   },
 });
