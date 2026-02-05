@@ -17,6 +17,7 @@ import Task28 from './Tasks/Task28';
 import Task29 from './Tasks/Task29';
 import Task30 from './Tasks/Task30';
 import Task31 from './Tasks/Task31';
+import Task32 from './Tasks/Task32';
 function App() {
   return (
     <SafeAreaProvider>
@@ -38,8 +39,9 @@ function App() {
         <Task28 />
         <Task29 />
         <Task30 />
-      */}
         <Task31 />
+      */}
+        <Task32 />
       </View>
     </SafeAreaProvider>
   );
