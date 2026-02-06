@@ -1,25 +1,17 @@
-import React, {
-  useState,
-  useEffect,
-  Component,
-  useRef,
-  useImperativeHandle,
-  forwardRef,
-  createRef,
-} from 'react';
+import { useRef, useState } from 'react';
 import {
-  Text,
-  View,
-  StyleSheet,
-  Button,
-  TextInput,
-  Image,
   Alert,
+  Button,
   FlatList,
-  Pressable,
+  Image,
   Modal,
+  Pressable,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
 } from 'react-native';
-import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Task29() {
   const [isModalVisible, setIsModalVisible] = useState(false);

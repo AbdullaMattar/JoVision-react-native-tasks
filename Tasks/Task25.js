@@ -1,14 +1,6 @@
-import React, {
-  useState,
-  useEffect,
-  Component,
-  useRef,
-  useImperativeHandle,
-  forwardRef,
-  createRef,
-} from 'react';
-import { Text, View, StyleSheet, Button, TextInput } from 'react-native';
-import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
+import { Component, createRef } from 'react';
+import { StyleSheet, Text, TextInput } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Task25() {
   const myref = createRef(); // useRef(null) is also possible

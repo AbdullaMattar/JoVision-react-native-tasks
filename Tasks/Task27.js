@@ -1,22 +1,6 @@
-import React, {
-  useState,
-  useEffect,
-  Component,
-  useRef,
-  useImperativeHandle,
-  forwardRef,
-  createRef,
-} from 'react';
-import {
-  Text,
-  View,
-  StyleSheet,
-  Button,
-  TextInput,
-  Image,
-  Alert,
-} from 'react-native';
-import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
+import { useState } from 'react';
+import { Alert, Button, Image, StyleSheet, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Task27() {
   const [loc, setLoc] = useState(null);

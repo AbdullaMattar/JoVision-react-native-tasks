@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import { Text, View, ScrollView, TextInput } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
@@ -19,10 +20,11 @@ import Task30 from './Tasks/Task30';
 import Task31 from './Tasks/Task31';
 import Task32 from './Tasks/Task32';
 import Task33 from './Tasks/Task33';
+import Task34 from './Tasks/Task34';
 function App() {
   return (
     <SafeAreaProvider>
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, backgroundColor: 'rgba(255, 255, 255, 0.9)' }}>
         {/*
         <Task16></Task16>
         <Task17></Task17>
@@ -42,8 +44,9 @@ function App() {
         <Task30 />
         <Task31 />
         <Task32 />
-      */}
         <Task33 />
+      */}
+        <Task34 />
       </View>
     </SafeAreaProvider>
   );

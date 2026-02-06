@@ -1,13 +1,6 @@
-import React, {
-  useState,
-  useEffect,
-  Component,
-  useRef,
-  useImperativeHandle,
-  forwardRef,
-} from 'react';
-import { Text, View, StyleSheet, Button, TextInput } from 'react-native';
-import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
+import { forwardRef, useImperativeHandle, useRef, useState } from 'react';
+import { StyleSheet, Text, TextInput } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const MyFunctionPage = forwardRef((props, ref) => {
   // in modern react forwardRef is gonna be Deprecated

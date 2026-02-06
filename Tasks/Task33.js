@@ -1,25 +1,6 @@
-import React, {
-  useState,
-  useEffect,
-  Component,
-  useRef,
-  useImperativeHandle,
-  forwardRef,
-  createRef,
-} from 'react';
-import {
-  Text,
-  View,
-  StyleSheet,
-  Button,
-  TextInput,
-  Image,
-  Alert,
-  FlatList,
-  Pressable,
-  Modal,
-} from 'react-native';
-import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
+import { useRef, useState } from 'react';
+import { Image, Pressable, StyleSheet, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Video from 'react-native-video';
 import thumbnail from '../Resource/Images/(2).jpg'; //here we import our image
 import TestVideo from '../Resource/Videos/1.mp4'; //we can import video like this also
