@@ -122,7 +122,7 @@ export default function Task31() {
               onPress={() => DuplicateImg(item, index)}>
               <Image
                 style={styles.icnimg}
-                source={require('../Resource/Images/duplicate-icon.png')}
+                source={require('../Resource/icons/duplicate-icon.png')}
               />
             </Pressable>
           </View>
