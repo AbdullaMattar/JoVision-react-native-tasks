@@ -3,7 +3,7 @@ import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default function Task34() {
+export default function Task35() {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [country, setCountry] = useState('');
