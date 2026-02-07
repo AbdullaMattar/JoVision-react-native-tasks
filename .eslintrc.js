@@ -11,6 +11,7 @@ module.exports = {
   extends: ['eslint:recommended', 'plugin:react/recommended'],
   plugins: ['react', 'unused-imports'],
   rules: {
+    'react/prop-types': 'off',
     // React Native / modern React
     'react/react-in-jsx-scope': 'off',
     'react/display-name': 'off',

@@ -1,14 +1,13 @@
-import React, { useState, useEffect, Component } from 'react';
-import { Text, View, StyleSheet, Button, TextInput } from 'react-native';
-import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
+import React, { useState } from 'react';
+import { Text, StyleSheet, TextInput } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const MyFunctionPage = props => {
   // another way of declaring  MyFunctionPage = ({setT}) ....
   return (
     <TextInput
       placeholder="Type here"
-      onChangeText={newtext => props.setT(newtext)}
-    ></TextInput>
+      onChangeText={newtext => props.setT(newtext)}></TextInput>
   );
 };
 
