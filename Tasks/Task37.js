@@ -1,50 +1,43 @@
-import React, { Component, useContext, useState } from 'react';
-import { StyleSheet, Text, TextInput, View } from 'react-native';
+import React, { useState } from 'react';
+import { RefreshControl, ScrollView, StyleSheet, Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { InputContext } from '../Component/customContext';
-export default function Task37() {
-  const [input, setInput] = useState('');
 
+export default function Task37() {
+  // const renderCount = useRef(0);
+  // renderCount.current++;
+  // console.log('Render count:', renderCount.current);
+  const [refreshing, setRefreshing] = useState(false);
+  const txtArray = Array.from({ length: 100 }, () => generateRandomWord(10));
+
+  const onRefresh = () => {
+    setRefreshing(true);
+    setTimeout(() => {
+      // here we can do anything but i choose timeout
+      setRefreshing(false);
+    }, 1000);
+  };
   return (
     <SafeAreaView style={styles.container}>
-      <InputContext.Provider value={{ text: input, setText: setInput }}>
-        <MyFunc />
-        <MyFunc />
-        <MyFunc />
-        <MyFunc />
-      </InputContext.Provider>
+      <ScrollView
+        style={styles.scrollView}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }>
+        {txtArray.map((word, index) => (
+          <Text key={index}>{word}</Text>
+        ))}
+      </ScrollView>
     </SafeAreaView>
   );
 }
-
-class Myclass extends Component {
-  render() {
-    return (
-      <InputContext.Consumer>
-        {theInput => {
-          return <Text>{theInput.text}</Text>;
-        }}
-      </InputContext.Consumer>
-    );
+function generateRandomWord(length) {
+  let result = '';
+  const characters = 'abcdefghijklmnopqrstuvwxyz';
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * characters.length));
   }
+  return result;
 }
-
-const MyFunc = () => {
-  const { text, setText } = useContext(InputContext);
-  return (
-    <View>
-      <TextInput
-        style={styles.txtinput}
-        value={text}
-        placeholder="Type here"
-        onChangeText={setText}
-        placeholderTextColor="green"
-        backgroundColor="black"
-      />
-      <Myclass />
-    </View>
-  );
-};
 
 const styles = StyleSheet.create({
   container: {
@@ -53,8 +46,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  txtinput: {
-    color: 'green',
+  scrollView: {
     backgroundColor: 'rgb(233, 196, 175)',
     paddingHorizontal: 65,
   },
