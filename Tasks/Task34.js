@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import useCurrentTime from '../hooks/useCurrentTime';
+import useCurrentTime from '../Component/useCurrentTime';
 
 export default function Task34() {
   const currentTime = useCurrentTime();
