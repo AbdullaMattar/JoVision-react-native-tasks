@@ -1,5 +1,6 @@
 /* eslint-disable */
 import React from 'react';
+import 'react-native-gesture-handler';
 import { Text, View, ScrollView, TextInput } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import store from './store/index';
@@ -28,13 +29,17 @@ import Task37 from './Tasks/Task37';
 import Task38 from './Tasks/Task38';
 import Task39 from './Tasks/Task39';
 import Task40 from './Tasks/Task40';
+import Task41 from './Tasks/Task41';
 import { Provider } from 'react-redux';
+import { NavigationContainer } from '@react-navigation/native';
 function App() {
   return (
     <SafeAreaProvider>
       <View style={{ flex: 1, backgroundColor: 'rgba(255, 255, 255, 0.9)' }}>
         <Provider store={store}>
-          <Task40 />
+          <NavigationContainer>
+            <Task41 />
+          </NavigationContainer>
         </Provider>
       </View>
     </SafeAreaProvider>
