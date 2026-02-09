@@ -30,6 +30,7 @@ import Task38 from './Tasks/Task38';
 import Task39 from './Tasks/Task39';
 import Task40 from './Tasks/Task40';
 import Task41 from './Tasks/Task41';
+import Task42 from './Tasks/Task42';
 import { Provider } from 'react-redux';
 import { NavigationContainer } from '@react-navigation/native';
 function App() {
@@ -38,7 +39,7 @@ function App() {
       <View style={{ flex: 1, backgroundColor: 'rgba(255, 255, 255, 0.9)' }}>
         <Provider store={store}>
           <NavigationContainer>
-            <Task41 />
+            <Task42 />
           </NavigationContainer>
         </Provider>
       </View>
