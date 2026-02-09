@@ -27,13 +27,14 @@ import Task36 from './Tasks/Task36';
 import Task37 from './Tasks/Task37';
 import Task38 from './Tasks/Task38';
 import Task39 from './Tasks/Task39';
+import Task40 from './Tasks/Task40';
 import { Provider } from 'react-redux';
 function App() {
   return (
     <SafeAreaProvider>
       <View style={{ flex: 1, backgroundColor: 'rgba(255, 255, 255, 0.9)' }}>
         <Provider store={store}>
-          <Task39 />
+          <Task40 />
         </Provider>
       </View>
     </SafeAreaProvider>
