@@ -2,6 +2,7 @@
 import React from 'react';
 import { Text, View, ScrollView, TextInput } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
+import store from './store/index';
 import Task16 from './Tasks/Task16';
 import Task17 from './Tasks/Task17';
 import Task18 from './Tasks/Task18';
@@ -26,11 +27,14 @@ import Task36 from './Tasks/Task36';
 import Task37 from './Tasks/Task37';
 import Task38 from './Tasks/Task38';
 import Task39 from './Tasks/Task39';
+import { Provider } from 'react-redux';
 function App() {
   return (
     <SafeAreaProvider>
       <View style={{ flex: 1, backgroundColor: 'rgba(255, 255, 255, 0.9)' }}>
-        <Task38 />
+        <Provider store={store}>
+          <Task39 />
+        </Provider>
       </View>
     </SafeAreaProvider>
   );
